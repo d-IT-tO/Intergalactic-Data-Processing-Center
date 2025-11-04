@@ -55,8 +55,7 @@ double string_to_decimal(const char* number, int base) {
     double frac = 0;
     double power = 1.0 / base;
     for (int i = 0; i < strlen(frac_part); i++) {
-        int val = char_to_value(toupper(frac_part[i]));
-        frac += val * power;
+        frac += power * char_to_value(toupper(frac_part[i]));
         power /= base;
     }
 
@@ -140,4 +139,5 @@ char* student1_process(int src_base, int dest_base, const char* number) {
 
     return result;
 }
+
 
