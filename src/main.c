@@ -11,6 +11,7 @@ void navigation_decoder() {
         printf("Result: %s\n", result);
         free(result);
     }
+    free(num)
 }
 
 void analyzer() {
@@ -81,4 +82,5 @@ int main(){
         }
     }        
 }
+
 
