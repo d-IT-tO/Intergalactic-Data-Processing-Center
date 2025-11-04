@@ -40,7 +40,8 @@ int main(){
     int choice;
     printf("Welcome to Intergalactic-Data-Processing-Center\n choose your action\n 1. Navigation coordinates decoder\n 2. Telemetry Analyzer\n 0. exit\n");
     while (1){
-        switch(scanf("%d", &choice)){
+        scanf("%d", &choice);
+        switch(choice){
             case 1:
                 navigation_decoder();
                 puts("Navigation coordinates decoder end");
@@ -56,3 +57,4 @@ int main(){
     }
         
 }
+
