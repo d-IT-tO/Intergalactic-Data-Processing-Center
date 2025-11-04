@@ -13,27 +13,53 @@ void navigation_decoder() {
     }
 }
 
-void analyzer(){
+void analyzer() {
     int cnt;
     puts("write the number of numbers");
-    scanf("%d", &cnt);
-    if (cnt < 1){
-        puts("error");
+    if (scanf("%d", &cnt) != 1) {
+        puts("Invalid input for count.");
         return;
-    }   
+    }
+    if (cnt < 1) {
+        puts("error: Count must be 1 or greater.");
+        return;
+    }
+
     char** arr = malloc(cnt * sizeof(char*));
     int* base = malloc(cnt * sizeof(int));
-    if (arr == NULL || base == NULL)
+    if (arr == NULL || base == NULL) {
         puts("malloc error");
-    else{
-        puts("Write the number and base by a space");
-        for (int i = 0; i < cnt; i++)
-            scanf("%s%d", *(arr + i), (base + i));
-        arr_full_analyze(arr, base, cnt);
+        free(arr); 
+        free(base);
+        return;
+    } 
+
+    puts("Write the number and base by a space (max length: 63)");
+    for (int i = 0; i < cnt; i++) {
+        arr[i] = malloc(64 * sizeof(char));
+        if (arr[i] == NULL) {
+            puts("malloc error for number");
+            for (int j = 0; j < i; j++) {
+                free(*(arr + j));
+            }
+            free(arr);
+            free(base);
+            return;
+        }
+        if (scanf("%100s%d", *(arr + j), *(base + i)) != 2) {
+            puts("input error, num = 0, base = 2");
+            *(arr + j) = "0";
+            *(base + i) = 2
+        }
+        }
     }
+    
+    arr_full_analyze(arr, base, cnt);
+    
+    for (int i = 0; i < cnt; i++)
+        free(*(arr + i));
     free(arr);
     free(base);
-    return 0;
 }
 
 int main(){
@@ -54,7 +80,5 @@ int main(){
                 puts("program end");
                 return 0;
         }
-    }
-        
+    }        
 }
-
