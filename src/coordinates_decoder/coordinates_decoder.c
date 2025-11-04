@@ -86,15 +86,12 @@ char* decimal_to_string(double number, int base, int precision) {
     buffer[idx++] = '.';
 
     //farctional
-
-    double eps = 0.5 * pow(1.0 / base, precision);
     
     for (int i = 0; i < precision; i++) {
         frac_part *= base;
         int digit = (int)frac_part;
         buffer[idx++] = value_to_char(digit);
         frac_part -= digit;
-        if (frac_part < eps) break;
     }
 
     buffer[idx] = '\0';
@@ -140,6 +137,7 @@ char* student1_process(int src_base, int dest_base, const char* number) {
 
     return result;
 }
+
 
 
 
