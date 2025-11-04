@@ -51,7 +51,6 @@ void analyzer() {
             *(arr + j) = "0";
             *(base + i) = 2
         }
-        }
     }
     
     arr_full_analyze(arr, base, cnt);
@@ -82,3 +81,4 @@ int main(){
         }
     }        
 }
+
