@@ -46,9 +46,9 @@ void analyzer() {
             free(base);
             return;
         }
-        if (scanf("%100s%d", *(arr + j), *(base + i)) != 2) {
+        if (scanf("%63s%d", *(arr + i), (base + i)) != 2) {
             puts("input error, num = 0, base = 2");
-            *(arr + j) = "0";
+            *(arr + i) = "0";
             *(base + i) = 2;
         }
     }
@@ -70,16 +70,15 @@ int main(){
             case 1:
                 navigation_decoder();
                 puts("Navigation coordinates decoder end");
-                continue;
+                break;
             case 2:
                 analyzer();
                 puts("Telemetry Analyzer end");
-                continue;
+                break;
             case 0:
                 puts("program end");
                 return 0;
         }
     }        
 }
-
 
