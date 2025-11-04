@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <math.h>
 
 //validation
 int validate_base(int base);
@@ -23,3 +24,4 @@ void split_number_string(const char* number, char* integer_part, char* fractiona
 char* student1_process(int src_base, int dest_base, const char* number);
 
 #endif
+
