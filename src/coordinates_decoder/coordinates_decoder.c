@@ -63,8 +63,6 @@ double string_to_decimal(const char* number, int base) {
 }
 
 char* decimal_to_string(double number, int base, int precision) {
-    if (precision > 12) precision = 12;
-
     long long int_part = (long long)number;
     double frac_part = number - int_part;
 
@@ -88,12 +86,15 @@ char* decimal_to_string(double number, int base, int precision) {
     buffer[idx++] = '.';
 
     //farctional
+
+    double eps = 0.5 * pow(1.0 / base, precision);
+    
     for (int i = 0; i < precision; i++) {
         frac_part *= base;
         int digit = (int)frac_part;
         buffer[idx++] = value_to_char(digit);
         frac_part -= digit;
-        if (frac_part < 1e-12) break;
+        if (frac_part < eps) break;
     }
 
     buffer[idx] = '\0';
@@ -139,5 +140,6 @@ char* student1_process(int src_base, int dest_base, const char* number) {
 
     return result;
 }
+
 
 
