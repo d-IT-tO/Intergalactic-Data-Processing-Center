@@ -49,7 +49,7 @@ void analyzer() {
         if (scanf("%100s%d", *(arr + j), *(base + i)) != 2) {
             puts("input error, num = 0, base = 2");
             *(arr + j) = "0";
-            *(base + i) = 2
+            *(base + i) = 2;
         }
     }
     
@@ -81,4 +81,5 @@ int main(){
         }
     }        
 }
+
 
