@@ -3,7 +3,7 @@
 
 void navigation_decoder() {
     int src, dest;
-    char num[32];
+    char* num = (char*)malloc(32 * sizeof(char));
     scanf("%d %d %31s", &src, &dest, num);
 
     char* result = student1_process(src, dest, num);
@@ -58,3 +58,4 @@ int main(){
                 return 0;
     }
 }
+
