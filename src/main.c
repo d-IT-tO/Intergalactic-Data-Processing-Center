@@ -28,7 +28,7 @@ void analyzer(){
     else{
         puts("Write the number and base by a space");
         for (int i = 0; i < cnt; i++)
-            scanf("%s%d", (arr + i), (base + i));
+            scanf("%s%d", *(arr + i), (base + i));
         arr_full_analyze(arr, base, cnt);
     }
     free(arr);
@@ -38,7 +38,7 @@ void analyzer(){
 
 int main(){
     int choice;
-    puts("Welcome to Intergalactic-Data-Processing-Center\n
+    printf("Welcome to Intergalactic-Data-Processing-Center\n
         choose your action\n
         1. Navigation coordinates decoder\n
         2. Telemetry Analyzer\n
@@ -58,4 +58,5 @@ int main(){
                 return 0;
     }
 }
+
 
