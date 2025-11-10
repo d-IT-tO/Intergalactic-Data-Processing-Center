@@ -16,7 +16,7 @@ void test_fractional(void){
     assert(r != NULL && strcmp(r, "247.742") == 0);
     free(r);
 }
-void test_blya_nu_tut_ne_ebu(){}
+void test_memory_overflow (){}
 
 void test_err(void){
     char *r = student1_process(32, 8, "a7.f1");
