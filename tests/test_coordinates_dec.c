@@ -30,7 +30,7 @@ void test_err(void){
     free(r);
 }
 int main(){
-    test_blya_nu_tut_ne_ebu();
+    test_memory_overflow();
     test_convertations();
     test_err();
     test_fractional();
